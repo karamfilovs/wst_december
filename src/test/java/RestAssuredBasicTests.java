@@ -1,9 +1,5 @@
-package dto;
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RestTest {
+public class RestAssuredBasicTests {
     private static final String BASE_URI = "https://st2016.inv.bg";
     private static final String BASE_PATH = "/RESTapi";
     private static final String USERNAME = "karamfilovs@gmail.com";
@@ -38,12 +34,11 @@ public class RestTest {
                 headers.put("header2", "value2");
                 headers.put("X-API-VERSION", "2");
                 headers.put("Authorization", "Bearer token"); //Long lived JWT token
-                Item item = specification.headers(headers)
-                        .pathParam("id", id)
-                        .pathParam("parentId", id)
-                        .get("/users/{parentId}/child/{id}")
-                        .then()
-                        .extract().as(Item.class);
+//                Item item = specification.headers(headers)
+//                        .pathParam("id", id)
+//                        .pathParam("parentId", id)
+//                        .get("/users/{parentId}/child/{id}")
+//                        .then();
 
 
     }

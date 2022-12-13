@@ -23,9 +23,8 @@ hs_err_pid*
 # Eclipse
 .classpath
 .project
-.allure
 .settings/
-
+.allure
 # Intellij
 .idea
 *.iml
