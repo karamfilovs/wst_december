@@ -1,3 +1,5 @@
+package legacy;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dto.Credentials;
@@ -23,7 +25,7 @@ public class NoFrameworkTest {
     private static final Credentials creds = new Credentials(EMAIL, PASSWORD, DOMAIN);
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static String TOKEN;
-    private static Logger logger = LoggerFactory.getLogger("NoFrameworkTest.class");
+    private static Logger logger = LoggerFactory.getLogger("legacy.NoFrameworkTest.class");
 
     @BeforeAll
     public static void beforeAll() {

@@ -3,6 +3,7 @@ package core;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.restassured.RestAssured;
+import io.restassured.authentication.AuthenticationScheme;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -13,15 +14,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Request {
-    private static final String BASE_URI = "https://api.inv.bg"; //localhost
-    private static final String BASE_PATH = "/v3"; //v4
+    private static final String BASE_URI = System.getProperty("baseUri", "https://api.inv.bg"); //localhost
+    private static final String BASE_PATH = System.getProperty("basePath", "/v3");
     protected static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static Logger logger = LoggerFactory.getLogger("NoFrameworkTest.class");
     private String token;
 
+
     public Request (String token){
         this.token = token;
     }
+
 
     protected RequestSpecification baseRequest(){
         return RestAssured.given()
@@ -66,7 +69,7 @@ public abstract class Request {
         return baseRequest()
                 .queryParams(queryParams)
                 .body(body)
-                .put(resource)
+                .patch(resource)
                 .prettyPeek();
     }
 

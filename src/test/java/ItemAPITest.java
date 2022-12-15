@@ -9,8 +9,8 @@ import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 
-@Epic("Some EPIC")
-@Feature("Item")
+
+@Feature("Items")
 public class ItemAPITest {
     private static String TOKEN = LoginAPI.getToken();
 
