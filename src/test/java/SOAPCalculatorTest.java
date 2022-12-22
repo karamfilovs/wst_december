@@ -48,4 +48,11 @@ public class SOAPCalculatorTest {
         SoapAPI soapAPI = new SoapAPI();
         Assertions.assertEquals(6, soapAPI.add(1,5));
     }
+
+    //api().as(Role.ADMIN).itemApi().createItem(...);
+    //api().as(Role.MANAGER).itemApi().createItem(...);
+    //api().admin().itemApi().createItem(...);
+    //api().admin().itemApi().createItem(...);
+    //api().manager().itemApi().createItem(Item);
+    //api.admin().clientApi().createClient(Client);
 }

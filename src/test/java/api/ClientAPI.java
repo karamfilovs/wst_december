@@ -12,4 +12,9 @@ public class ClientAPI extends Request {
     }
 
 
+    public ClientAPI(String token, Role role){
+        //this is calling the parent constructor to initialize token and role;
+        super(token, role);
+    }
+
 }

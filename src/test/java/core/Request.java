@@ -1,5 +1,6 @@
 package core;
 
+import api.Role;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.restassured.RestAssured;
@@ -23,6 +24,12 @@ public abstract class Request {
 
     public Request (String token){
         this.token = token;
+    }
+
+    public Request(String token, Role role){
+        //Authorize with different roles based on the selected role
+        //authorizeAdmin();
+        //authorizeManager();
     }
 
 
